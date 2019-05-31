@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 28
@@ -15,6 +16,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     compileOptions {
@@ -45,7 +50,7 @@ dependencies {
     //Butterknife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
-    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.0.0'
 
     // RxJava
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
@@ -59,4 +64,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.14.0'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.4.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.13.1'
+
+    //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
 }

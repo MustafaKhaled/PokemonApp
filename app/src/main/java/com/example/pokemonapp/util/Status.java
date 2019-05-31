@@ -1,4 +1,4 @@
-package com.a800pharmacy.app.util;
+package com.example.pokemonapp.util;
 
 public enum  Status {
     LOADING,
