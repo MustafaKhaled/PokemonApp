@@ -1,15 +1,14 @@
 package com.example.pokemonapp.features.details.di.component;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.pokemonapp.di.component.AppComponent;
 import com.example.pokemonapp.features.details.di.module.PokemonDetailsApiServiceModule;
 import com.example.pokemonapp.features.details.di.module.PokemonDetailsFactoryModule;
-import com.example.pokemonapp.features.details.ui.PokemonDetailsFragment;
-import com.example.pokemonapp.features.main.di.module.PokemonMainApiServiceModule;
+import com.example.pokemonapp.features.details.di.scope.PokemonDetailsScope;
+import com.example.pokemonapp.features.details.ui.PokemonDetailsActivity;
 
 import dagger.Component;
-
-@Component(dependencies = AppCompatActivity.class,modules = {PokemonDetailsApiServiceModule.class, PokemonDetailsFactoryModule.class})
+@PokemonDetailsScope
+@Component(dependencies = {AppComponent.class} , modules = {PokemonDetailsFactoryModule.class , PokemonDetailsApiServiceModule.class})
 public interface PokemonDetailsComponent {
-    void inject(PokemonDetailsFragment pokemonDetailsFragment);
+    void inject(PokemonDetailsActivity pokemonDetailsActivity);
 }

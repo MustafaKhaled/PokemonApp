@@ -68,4 +68,9 @@ dependencies {
     //ViewModel
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
 
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+
+
 }

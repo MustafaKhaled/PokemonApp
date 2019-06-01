@@ -2,35 +2,22 @@ package com.example.pokemonapp.features.main.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import com.example.pokemonapp.R;
 import com.example.pokemonapp.databinding.FragmentPokemonMainBinding;
 import com.example.pokemonapp.di.mulitbinding.DaggerViewModelFactory;
-import com.example.pokemonapp.features.details.ui.PokemonDetailsFragment;
+import com.example.pokemonapp.features.details.ui.PokemonDetailsActivity;
 import com.example.pokemonapp.features.main.data.model.PokemonMainResponse;
 import com.example.pokemonapp.features.main.di.component.DaggerPokemonMainComponent;
 import com.example.pokemonapp.features.main.di.component.PokemonMainComponent;
@@ -39,9 +26,6 @@ import com.example.pokemonapp.util.MyApplication;
 import com.example.pokemonapp.util.ResponseApi;
 
 import javax.inject.Inject;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class PokemonMainFragment extends AppCompatActivity {
     private static final String TAG = "PokemonMainFragment";
@@ -96,7 +80,7 @@ public class PokemonMainFragment extends AppCompatActivity {
                     textView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent =  new Intent(PokemonMainFragment.this, PokemonDetailsFragment.class);
+                            Intent intent =  new Intent(PokemonMainFragment.this, PokemonDetailsActivity.class);
                             intent.putExtra("url",pokemonMainResponseResponseApi.data.getResults().get(finalI1).getUrl());
                             startActivity(intent);
                         }

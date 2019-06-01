@@ -10,7 +10,7 @@ import retrofit2.Retrofit;
 @Module
 public class PokemonDetailsApiServiceModule {
     @Provides
-    PokemonDetailsApiService providesPokemonMainApiService(Retrofit retrofit){
+    PokemonDetailsApiService providesPokemonDetailsApiService(Retrofit retrofit){
         return retrofit.create(PokemonDetailsApiService.class);
     }
 }

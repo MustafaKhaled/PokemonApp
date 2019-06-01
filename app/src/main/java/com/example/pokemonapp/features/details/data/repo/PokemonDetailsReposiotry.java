@@ -14,7 +14,7 @@ public class PokemonDetailsReposiotry {
         this.pokemonDetailsApiService = pokemonDetailsApiService;
     }
 
-    public Single<PokemonDetailsResponse> getAllDetails(){
-        return pokemonDetailsApiService.getDetails();
+    public Single<PokemonDetailsResponse> getAllDetails(String url){
+        return pokemonDetailsApiService.getDetails(url);
     }
 }
